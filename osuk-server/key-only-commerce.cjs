@@ -42,16 +42,14 @@ function createService({
   }
 
   function reference(purchase) {
-    const input = JSON.stringify([
-      purchase.pack,
-      purchase.email,
-      purchase.key,
-      purchase.amountCents
-    ]);
-
     return 'osuk_' + crypto
       .createHmac('sha256', secret())
-      .update(input)
+      .update(JSON.stringify([
+        purchase.pack,
+        purchase.email,
+        purchase.key,
+        purchase.amountCents
+      ]))
       .digest('base64url');
   }
 
@@ -138,13 +136,11 @@ function createService({
       httpStatus: response.status
     };
 
-    const requestId = value?.requestId;
-
     if (
-      typeof requestId === 'string' &&
-      /^[A-Za-z0-9_-]{1,160}$/.test(requestId)
+      typeof value?.requestId === 'string' &&
+      /^[A-Za-z0-9_-]{1,160}$/.test(value.requestId)
     ) {
-      diagnostic.requestId = requestId;
+      diagnostic.requestId = value.requestId;
     }
 
     const errorCode = value?.code || value?.error?.code;
@@ -156,8 +152,11 @@ function createService({
       diagnostic.providerCode = errorCode;
     }
 
-    // Nunca registrar chave, e-mail, recibo ou resposta bruta.
-    console.error('OSUK: falha Pix', JSON.stringify(diagnostic));
+    // Não registrar chave, e-mail, recibo ou resposta bruta.
+    console.error(
+      'OSUK: falha Pix',
+      JSON.stringify(diagnostic)
+    );
 
     return diagnostic;
   }
@@ -265,8 +264,7 @@ function createService({
 
   function verify(data, order, created = false) {
     const status =
-      data &&
-      Object.hasOwn(statuses, data.status)
+      data && Object.hasOwn(statuses, data.status)
         ? statuses[data.status]
         : null;
 
@@ -412,24 +410,27 @@ function createService({
       );
     }
 
-    const existing = await goat(
-      '/payment-pix/get/' + encodeURIComponent(order.id)
-    );
-
-    if (existing) {
-      return {
-        accessToken,
-        order: await clientOrder(order, existing)
-      };
-    }
-
+    // Uma repetição consulta a tentativa anterior.
+    // Se a consulta falhar, não cria outra cobrança.
     if (body.recoverOnly === true) {
+      const existing = await goat(
+        '/payment-pix/get/' + encodeURIComponent(order.id)
+      );
+
+      if (existing) {
+        return {
+          accessToken,
+          order: await clientOrder(order, existing)
+        };
+      }
+
       throw new rules.PaymentError(
         409,
         'A tentativa anterior precisa ser conferida. Aguarde e atualize o pedido ou fale no Discord antes de gerar outro Pix.'
       );
     }
 
+    // Na primeira tentativa, cria o Pix diretamente.
     const data = await goat('/payment-pix/create', {
       amount: order.amountCents / 100,
       description: 'OSUK ' + rules.products[order.pack].name,
