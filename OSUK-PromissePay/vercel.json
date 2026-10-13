@@ -1,0 +1,8 @@
+{
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": "public",
+  "functions": {
+    "api/**/*.{js,mjs}": { "maxDuration": 60, "includeFiles": "osuk-server/**" }
+  }
+}

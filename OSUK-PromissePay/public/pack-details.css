@@ -1,0 +1,137 @@
+/* Product pages: the existing OSUK system, focused on one informed purchase. */
+.pack-detail-page .product-intro{padding-top:30px;padding-bottom:30px}
+.product-intro>.back-home{font-size:.8rem;gap:9px;margin-bottom:32px;color:#bcb1cc}
+.product-intro>.back-home .icon{transform:rotate(180deg);width:17px;height:17px}
+.product-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(340px,.9fr);gap:72px;align-items:start}
+.product-copy{padding:22px 0;min-width:0}
+.product-copy>.eyebrow{display:inline-block;padding:6px 11px;border:1px solid #453251;background:#19101f;border-radius:8px;font-size:.64rem;letter-spacing:.08em;color:#d5b8fa;margin:0 0 24px}
+.product-name{display:flex;align-items:center;gap:11px;margin-bottom:18px;font-size:1rem;color:#eee6f9;font-weight:500}
+.product-name .icon{width:24px;height:24px;color:#bf98f5}
+.product-copy h1{font-size:clamp(2.6rem,4.8vw,4.2rem);letter-spacing:-.045em;line-height:1.08;margin:0 0 25px}
+.product-copy .lead{font-size:1rem;line-height:1.85;color:#c3b9ce;max-width:590px;margin-bottom:22px}
+.product-audience{padding-left:16px;border-left:2px solid #7344b1;color:#af9fc1;font-size:.84rem;line-height:1.75;max-width:510px}
+.product-benefits{display:flex;gap:18px 24px;flex-wrap:wrap;list-style:none;margin:28px 0 20px;padding:0}
+.product-benefits li{display:flex;align-items:center;gap:8px;font-size:.76rem;color:#e1d5f0}
+.product-benefits .icon{width:18px;height:18px;color:#ba93ee}
+.product-copy>.text-link{font-size:.8rem;color:#d5bdf4;margin-top:8px}
+.product-order{min-width:0}
+.product-order .promotion-bar{display:block;padding:18px 20px;border-radius:18px;margin-bottom:18px}
+.product-order .promotion-copy h3{font-size:1rem;margin:5px 0 8px;line-height:1.3}
+.product-order .promotion-copy p{font-size:.67rem;line-height:1.6;margin-bottom:16px;max-width:none}
+.product-order .promotion-copy .eyebrow{font-size:.59rem;letter-spacing:.07em}
+.product-order .promotion-clock{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.product-order #promotion-status{font-size:.69rem;line-height:1.5;text-align:left;max-width:80px}
+.product-order .countdown{gap:7px}
+.product-order .countdown>span{min-width:48px;padding:8px 9px;border-radius:8px}
+.product-order .countdown b{font-size:1.3rem;line-height:1.1}
+.product-order .countdown small{font-size:.55rem}
+.product-order .countdown i{font-size:1.15rem}
+.pack.product-summary{padding:28px;background:#121017;border:1px solid #4c355f;border-radius:22px;box-shadow:0 18px 60px #0006;transform:none;min-width:0;color:#f8f4ff}
+.pack.product-summary:hover{transform:none;border-color:#745195;background:#121017}
+.pack.product-summary.has-promotion{padding-top:100px}
+.product-summary .product-label{display:flex;align-items:center;gap:8px;font-size:.62rem;letter-spacing:.09em;color:#c4abe3;font-weight:600;margin-bottom:18px;min-height:20px}
+.product-label .icon{height:18px;width:18px}
+.product-summary h2{font-size:1.75rem;margin:0 0 24px;line-height:1.15;color:#fbf7ff}
+.product-summary .regular-price{min-height:0;font-size:.81rem;margin-bottom:0}
+.product-summary .price{margin:5px 0 20px;color:#f9f5ff;font-size:1.1rem}
+.product-summary .price strong{font-size:3.6rem;letter-spacing:-.06em}
+.product-summary .price small{color:#b4a7c4;margin-top:8px;font-size:.72rem}
+.product-summary .pack-saving{min-height:0;font-size:.8rem;margin:0 0 20px;padding:10px 12px;background:#193022;border-color:#315b40;color:#c2eccb}
+.product-summary .pack-saving strong{color:#e0ffe6}
+.product-summary>.button{font-size:.88rem;gap:12px;min-height:54px;margin:0;white-space:normal;padding:15px 16px}
+.product-summary>.product-pix{display:flex;justify-content:center;align-items:center;gap:8px;color:#beb2cb;min-height:0;font-size:.73rem;margin:13px 0 24px;line-height:1.5}
+.product-pix .icon{height:17px;width:17px;flex-shrink:0}
+.product-included{border-top:1px solid #35293e;padding-top:22px}
+.product-included p{display:flex;align-items:flex-start;gap:12px;font-size:.74rem;color:#b9acc9;line-height:1.7;margin:0 0 17px}
+.product-included p:last-child{margin-bottom:0}
+.product-included>.icon,.product-included p>.icon{width:21px;height:21px;flex-shrink:0;margin-top:3px;color:#bf9fe7}
+.product-included strong{display:block;font-weight:500;color:#e8dbf7;font-size:.81rem;margin-bottom:4px}
+.product-summary .promo-seal{right:18px;top:10px;width:130px}
+.product-summary .promo-seal .seal-float{max-width:100%}
+[data-product="ultra"] .product-summary{border-color:#8053b6;background:radial-gradient(ellipse at 70% 0,#49215e22,transparent 75%),#121017}
+.pack-detail-page .section-head{align-items:end;gap:30px}
+.pack-detail-page .section-head .eyebrow{font-size:.65rem;letter-spacing:.09em;margin-bottom:15px}
+.pack-detail-page .section-head h2{font-size:clamp(1.9rem,3.5vw,2.75rem);margin-bottom:0;line-height:1.16}
+.pack-detail-page .section-head>p{max-width:350px;font-size:.83rem;line-height:1.8;margin-bottom:0}
+.product-features{border-top:1px solid #251d2e}
+.feature-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:38px;align-items:start}
+.feature-group{min-width:0;border-top:1px solid #5b3b75;padding-top:22px}
+.feature-group-heading{display:flex;align-items:center;gap:11px;margin-bottom:23px}
+.feature-group-heading>.icon{width:25px;height:25px;color:#c0a0ee}
+.feature-group h3{font-size:1.25rem;letter-spacing:-.025em;margin:0}
+.feature-group ul{list-style:none;padding:0;margin:0}
+.feature-group li{padding:0 0 20px;margin-bottom:20px;border-bottom:1px solid #25202c}
+.feature-group li:last-child{border:0;margin-bottom:0;padding-bottom:0}
+.feature-group strong{display:block;font-weight:500;font-size:.87rem;color:#e8e0f2;margin-bottom:7px;line-height:1.5}
+.feature-group p{font-size:.8rem;line-height:1.85;color:#b1a3c1;margin:0}
+.product-extra{display:flex;align-items:flex-start;gap:13px;background:#18111f;border:1px solid #3d2e49;border-radius:14px;padding:20px 22px;margin:34px 0 0;color:#d2bedf;font-size:.84rem;line-height:1.7}
+.product-extra>.icon{color:#c4a2ee;width:23px;height:23px;flex-shrink:0;margin-top:2px}
+.product-delivery{padding:32px;border:1px solid #32243e;border-radius:22px;background:#110d17;margin-block:12px 20px}
+.product-delivery .section-head{margin-bottom:28px}
+.product-delivery .section-head .text-link{font-size:.8rem;color:#cdb7e8}
+.product-delivery .delivery-flow{margin:0;padding-top:26px;border-color:#3a2a46}
+.product-delivery .delivery-flow strong{font-size:.83rem;line-height:1.5}
+.product-delivery .delivery-flow span{font-size:.77rem;line-height:1.85}
+.product-faq{padding-block:64px}
+.product-alternatives{padding-top:20px}
+.product-alternatives .section-head h2{font-size:1.8rem}
+.product-alternatives .section-head .text-link{font-size:.79rem;color:#c8b2e1}
+.alternatives-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.alternative-pack{display:flex;flex-direction:column;justify-content:space-between;gap:24px;border:1px solid #302638;border-radius:18px;padding:26px;background:#100d14;transition:border-color 180ms,background 180ms;min-width:0}
+.alternative-pack:hover{background:#17101f;border-color:#765295}
+.alternative-pack>div>.icon{height:24px;width:24px;color:#b998e2}
+.alternative-pack h3{font-size:1.35rem;margin:17px 0 13px;color:#f2eaf9}
+.alternative-pack p{font-size:.8rem;line-height:1.75;color:#b6a6c6;max-width:400px;margin-bottom:0}
+.alternative-pack .text-link{font-size:.81rem;color:#d2b9ef;padding:0}
+.product-final{margin-top:20px;background:#18101f}
+.product-final h2{font-size:clamp(2rem,3.5vw,3rem)}
+.product-final p:not(.eyebrow){font-size:.87rem;line-height:1.75}
+.product-final .actions{display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:245px}
+.product-final .buy{font-size:.85rem;white-space:normal;gap:10px}
+.product-final .text-link{justify-content:center;font-size:.76rem}
+@media(min-width:761px) and (max-width:1050px){
+ .product-hero{grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);gap:32px}
+ .product-copy h1{font-size:3rem}.product-copy .lead{font-size:.9rem}.product-benefits{gap:13px}
+ .pack.product-summary{padding:26px 22px}.pack.product-summary.has-promotion{padding-top:98px}
+ .product-summary .price strong{font-size:3.25rem}.feature-groups{gap:24px}.feature-group p{font-size:.77rem}
+ .product-delivery{padding:28px}.product-final .actions{min-width:220px}
+}
+@media(max-width:760px){
+ .pack-detail-page .product-intro{padding-top:20px;padding-bottom:18px}
+ .product-intro>.back-home{margin-bottom:16px;font-size:.76rem}
+ .product-hero{grid-template-columns:1fr;gap:28px}
+ .product-copy{padding:6px 0 0}.product-copy>.eyebrow{font-size:.59rem;margin-bottom:21px}
+ .product-name{font-size:.94rem;margin-bottom:17px}.product-copy h1{font-size:clamp(2.4rem,8.9vw,3.7rem);margin-bottom:21px}
+ .product-copy .lead{font-size:.89rem;line-height:1.85;margin-bottom:20px}.product-audience{font-size:.79rem;line-height:1.75}
+ .product-benefits{gap:13px 18px;margin:25px 0 16px}.product-benefits li{font-size:.72rem}.product-copy>.text-link{font-size:.78rem;margin-top:0}
+ .product-order .promotion-bar{padding:19px 20px}.product-order .promotion-clock{gap:10px}
+ .pack.product-summary{padding:27px 24px;border-radius:20px}.pack.product-summary.has-promotion{padding-top:101px}
+ .product-summary h2{font-size:1.7rem;margin-bottom:22px}.product-summary .price strong{font-size:3.6rem}
+ .product-summary>.button{font-size:.84rem}.product-summary .pack-saving{font-size:.78rem}
+ .product-included p{font-size:.75rem}.product-included strong{font-size:.82rem}
+ .pack-detail-page .section-head{display:block;margin-bottom:27px}
+ .pack-detail-page .section-head h2{font-size:1.9rem}.pack-detail-page .section-head>p{font-size:.81rem;margin-top:19px}
+ .pack-detail-page .section-head>.text-link{margin-top:16px}
+ .feature-groups{grid-template-columns:1fr;gap:30px;margin-top:28px}.feature-group{padding-top:21px}
+ .feature-group-heading{margin-bottom:23px}.feature-group h3{font-size:1.22rem}
+ .feature-group li{margin-bottom:17px;padding-bottom:17px}.feature-group strong{font-size:.85rem}.feature-group p{font-size:.79rem}
+ .product-extra{padding:20px 18px;font-size:.78rem;margin-top:28px;border-radius:13px}
+ .product-delivery{padding:27px 22px;margin-block:8px 15px;border-radius:20px}
+ .product-delivery .section-head h2{font-size:1.7rem}.product-delivery .section-head .text-link{font-size:.76rem}
+ .product-delivery .delivery-flow{gap:25px;padding-top:25px}.product-delivery .delivery-flow strong{font-size:.82rem}.product-delivery .delivery-flow span{font-size:.76rem}
+ .product-faq{padding-block:42px}.alternatives-grid{grid-template-columns:1fr;gap:14px}
+ .product-alternatives .section-head h2{font-size:1.75rem}.alternative-pack{padding:24px;gap:23px}
+ .product-final .actions{min-width:0;width:100%;gap:8px}.product-final h2{font-size:1.9rem}.product-final p:not(.eyebrow){font-size:.82rem}
+}
+@media(max-width:380px){
+ .product-copy h1{font-size:2.45rem}.pack.product-summary{padding-inline:21px}.product-order .promotion-bar{padding-inline:16px}
+ .product-order .countdown{gap:5px}.product-order .countdown>span{min-width:44px;padding:7px 8px}.product-order .countdown b{font-size:1.23rem}
+ .product-summary>.button{font-size:.8rem;padding-inline:12px}.product-summary .price strong{font-size:3.2rem}.product-included p{gap:9px}
+ .product-summary>.product-pix{font-size:.66rem}.product-summary .promo-seal{right:14px;width:124px}
+ .product-benefits{gap:13px}.product-benefits li{font-size:.7rem}.product-name{font-size:.87rem}
+}
+@media(prefers-reduced-motion:reduce){.alternative-pack{transition:none}.product-summary:hover{transform:none}}
+/* Override inherited home countdown widths inside the compact purchase column. */
+.product-order .countdown>span{width:48px;min-width:48px;min-height:54px}
+@media(max-width:760px){.product-order .promotion-clock{flex-wrap:wrap;justify-content:flex-start}.product-order #promotion-status{flex-basis:100%;max-width:none}.product-order .promotion-copy{text-align:left}.product-order .countdown>span{width:48px;min-width:48px;min-height:54px}}
+@media(max-width:380px){.product-order .countdown>span{width:44px;min-width:44px;min-height:52px}}

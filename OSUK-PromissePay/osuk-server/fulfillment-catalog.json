@@ -1,0 +1,17 @@
+{
+  "ultra": {
+    "name": "Ultra Pack",
+    "tutorialUrl": "https://youtu.be/Kl_x8zHQmrI",
+    "downloadUrl": "https://drive.google.com/drive/folders/1BP7qmQfNtQXPvlUFlxGQ1W4AIoULpt_6?usp=drive_link"
+  },
+  "valorant": {
+    "name": "Valorant Booster",
+    "tutorialUrl": "https://youtu.be/koUK33-bfeI",
+    "downloadUrl": "https://drive.google.com/drive/folders/18ThddmHaqSl1TN2GuiQ2FtDKPAIlLYWx?usp=drive_link"
+  },
+  "completo": {
+    "name": "Pack Completo",
+    "tutorialUrl": "https://youtu.be/uqodvORDayQ",
+    "downloadUrl": "https://drive.google.com/drive/folders/100eQEOpjLCRjW50pktuVjMwn57a5BvVS?usp=drive_link"
+  }
+}

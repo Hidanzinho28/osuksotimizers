@@ -1,0 +1,176 @@
+/* Focused purchase and delivery flows. All styles are scoped to these pages. */
+.commerce-page{--commerce-soft:#c4b9d2;--commerce-line:#332b40;--commerce-ease:cubic-bezier(.22,1,.36,1)}
+.commerce-page [hidden]{display:none!important}
+.commerce-page .commerce-main{max-width:1100px;padding-top:32px;padding-bottom:76px}
+.commerce-page .payment-result{padding:32px;align-self:start}
+.commerce-page .payment-result-icon{display:grid;place-items:center;width:60px;height:60px;border-radius:18px;background:#183d28;border:1px solid #387a51;color:#a9efc4;margin-bottom:25px}
+.commerce-page .payment-result-icon .icon{width:30px;height:30px}
+.commerce-page .payment-result[data-state=pending] .payment-result-icon{color:#e6cd9d;background:#362915;border-color:#78603c}
+.commerce-page .payment-result[data-state=problem] .payment-result-icon{color:#f2b9c2;background:#351b22;border-color:#77505a}
+.commerce-page .payment-result h2{font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.14;letter-spacing:-.04em;margin:12px 0 20px}
+.commerce-page .payment-result>p:not(.eyebrow):not(.commerce-notice){font-size:.9rem;line-height:1.75;color:#c4b9d2}
+.commerce-page .payment-result .button{width:100%;margin-top:20px;min-height:54px}
+.commerce-page .payment-result .text-link{min-height:44px;margin-top:18px;font-size:.8rem}
+.commerce-page #payment-result-preview{margin:0 0 25px}
+.approval-celebration{position:fixed;inset:0;z-index:1000;pointer-events:none;overflow:hidden;contain:layout paint}
+.approval-ship{position:absolute;left:50%;top:0;width:clamp(110px,14vw,176px);transform:translate3d(-50%,110vh,0);will-change:transform,opacity}
+.approval-ship>svg{display:block;width:100%;height:auto;position:relative;z-index:1;filter:drop-shadow(0 0 14px #a855f76e)}
+.approval-ship:after{content:'';position:absolute;top:79%;left:50%;width:clamp(10px,1.3vw,20px);height:58vh;transform:translateX(-50%);border-radius:50%;background:linear-gradient(#ddbaffbb,#a855f760 22%,#7c3aed20 65%,transparent);filter:blur(5px)}
+@media(prefers-reduced-motion:reduce){.approval-celebration{display:none}}
+.commerce-page .commerce-back{font-size:.8rem;color:#c0b3d0;gap:10px;margin-bottom:24px;min-height:44px}
+.commerce-page .commerce-back>.icon{width:16px;height:16px;transform:rotate(180deg)}
+.commerce-page .commerce-steps{list-style:none;display:flex;gap:28px;margin:0 0 28px;padding:0;color:#a49aad;font-size:.76rem}
+.commerce-page .commerce-steps li{display:flex;align-items:center;gap:10px;position:relative}
+.commerce-page .commerce-steps li+li:before{content:'';width:16px;height:1px;background:#43354f;position:absolute;left:-22px}
+.commerce-page .commerce-steps li>span{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid #4c3c5f;border-radius:8px;color:#cabbd9;font-size:.62rem;font-weight:600}
+.commerce-page .commerce-steps .is-done>span{background:#1e142e;color:#c4a4ff;border-color:#573881}
+.commerce-page .commerce-steps .is-done .icon{width:14px;height:14px}
+.commerce-page .commerce-steps .is-current{color:#f1e8fc;font-weight:600}
+.commerce-page .commerce-steps .is-current>span{background:#7c3aed;border-color:#9460e6;color:#fff}
+.commerce-page .commerce-heading{margin-bottom:38px}
+.commerce-page .commerce-heading>.eyebrow{margin-bottom:12px;font-size:.65rem}
+.commerce-page .commerce-heading h1{font-size:clamp(2.6rem,4.7vw,4.1rem);max-width:710px;line-height:1.03;margin:0 0 20px}
+.commerce-page .commerce-heading>p:last-child{max-width:490px;font-size:.9rem;color:var(--commerce-soft);line-height:1.7;margin:0}
+.commerce-page .payment-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.8fr);gap:28px;align-items:start}
+.commerce-page .commerce-panel{background:#111015;border:1px solid var(--commerce-line);border-radius:22px;min-width:0}
+.commerce-page .payment-form-panel{padding:30px 32px}
+.commerce-page .commerce-panel-heading{display:flex;align-items:flex-start;gap:14px;margin-bottom:28px}
+.commerce-page .commerce-panel-heading>.icon{color:#c2a3f1;margin-top:2px;flex-shrink:0;width:22px;height:22px}
+.commerce-page .commerce-panel-heading h2{font-size:1.45rem;margin:0 0 10px;letter-spacing:-.035em}
+.commerce-page .commerce-panel-heading p{font-size:.81rem;color:var(--commerce-soft);margin:0;line-height:1.65}
+.commerce-page .commerce-field{margin-bottom:18px}
+.commerce-page .commerce-field label{display:block;font-size:.82rem;font-weight:500;margin-bottom:8px;color:#e9e3f0}
+.commerce-page .commerce-field input,.commerce-page .chat-form input{display:block;width:100%;background:#09090c;border:1px solid #494050;border-radius:10px;color:#f5f0fc;min-height:52px;padding:13px 15px;font-size:.85rem;transition:border-color 180ms,box-shadow 180ms}
+.commerce-page .commerce-field input::placeholder,.commerce-page .chat-form input::placeholder{color:#a49aae;opacity:1}
+.commerce-page .commerce-field input:hover,.commerce-page .chat-form input:hover{border-color:#7b668e}
+.commerce-page .commerce-field input:focus-visible,.commerce-page .chat-form input:focus-visible{border-color:#b492ef;outline:2px solid #bc99fc;outline-offset:3px}
+.commerce-page .commerce-field input[aria-invalid=true]{border-color:#eb979f}
+.commerce-page .commerce-field-help{font-size:.72rem;line-height:1.7;color:#b9adc7;margin:0}
+.commerce-page .commerce-field-help a,.commerce-page .chat-disclosure a{color:#dcc7ff;text-decoration:underline;text-underline-offset:3px}
+.commerce-page .payment-methods{border:0;border-top:1px solid #342c3c;padding:24px 0 0;margin:26px 0 0;min-width:0}
+.commerce-page .payment-methods legend{font-size:.9rem;font-weight:600;padding:0 0 12px;float:left;width:100%}
+.commerce-page .payment-method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;clear:both;margin-bottom:12px}
+.commerce-page .payment-method{position:relative;min-height:88px;padding:14px 11px;background:#14101b;border:1px solid #3e314c;border-radius:12px;display:flex;align-items:center;gap:9px;cursor:pointer;transition:background 180ms,border-color 180ms}
+.commerce-page .payment-method input{position:absolute;opacity:0;width:1px;height:1px;inset:16px auto auto 16px}
+.commerce-page .payment-method:has(input:checked){border-color:#ac80ed;background:#241435}
+.commerce-page .payment-method:has(input:focus-visible){outline:3px solid #c4b5fd;outline-offset:4px}
+.commerce-page .payment-method .icon{width:20px;height:20px;flex-shrink:0;color:#c2a7e8}
+.commerce-page .payment-method strong{display:block;font-size:.8rem;font-weight:600;color:#ede6f7}
+.commerce-page .payment-method small{display:block;margin-top:3px;color:#bbabc9;font-size:.62rem}
+.commerce-page .payment-method:has(input:disabled){cursor:not-allowed;background:#121115;border-color:#39343e}
+.commerce-page .payment-method:has(input:disabled) strong{color:#b6acbf}
+.commerce-page .payment-method:has(input:disabled) .icon{color:#9d8cab}
+.commerce-page .payment-method:has(input:not(:disabled)):hover{border-color:#c6a2f3}
+.commerce-page .payment-submit-area{padding-top:26px}
+.commerce-page #pay-button{width:100%;min-height:54px;font-size:.88rem}
+.commerce-page .button:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+.commerce-page .payment-provider-note{font-size:.68rem;color:#b6a7c4;display:flex;align-items:center;justify-content:center;gap:7px;margin:13px 0 0;line-height:1.6;text-align:center}
+.commerce-page .payment-provider-note>.icon{width:14px;height:14px;flex-shrink:0}
+.commerce-page .commerce-feedback{font-size:.8rem;line-height:1.65;color:#e7cafa;margin:14px 0 0;overflow-wrap:anywhere}
+.commerce-page .commerce-feedback:empty{display:none}
+.commerce-page .commerce-feedback.is-error,.commerce-page .commerce-feedback[data-state=error]{color:#f3b3ba}
+.commerce-page .commerce-notice{border-left:2px solid #ad82e3;background:#21172c;color:#dacbe9;font-size:.76rem;padding:12px 14px;line-height:1.65;margin:20px 0 0;border-radius:0 8px 8px 0}
+.commerce-page .payment-summary{padding:28px 28px 18px;background:linear-gradient(145deg,#21152f 0%,#131018 47%);position:sticky;top:112px}
+.commerce-page .order-summary-top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}
+.commerce-page .order-summary-top>.eyebrow{font-size:.65rem;margin:0}
+.commerce-page .commerce-product-icon{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #5a3b7d;border-radius:13px;background:#2c1a40;color:#ccb0fa}
+.commerce-page .commerce-product-icon .icon{width:22px;height:22px}
+.commerce-page .payment-summary h2{font-size:1.7rem;margin:0 0 13px}
+.commerce-page .order-description{font-size:.82rem;line-height:1.65;color:#c0b1cf;max-width:290px;margin:0 0 24px}
+.commerce-page .order-regular-price{color:#a99ab8;font-size:.85rem;text-decoration:line-through;margin:0 0 5px}
+.commerce-page .order-price{font-family:'Space Grotesk',Inter,sans-serif;font-weight:600;font-size:2.9rem;line-height:1.1;letter-spacing:-.05em;margin:0 0 5px;color:#f6eeff}
+.commerce-page .order-price-caption{font-size:.7rem;color:#b4a2c8;margin:0 0 20px}
+.commerce-page .order-saving{display:inline-flex;border:1px solid #477052;border-radius:7px;background:#15281b;color:#c0ebcf;padding:7px 10px;margin:0 0 18px;font-size:.75rem;line-height:1.5}
+.commerce-page .order-included{list-style:none;border-block:1px solid #3e2f4f;padding:20px 0;margin:0;display:grid;gap:14px}
+.commerce-page .order-included li{display:flex;align-items:center;gap:10px;font-size:.78rem;color:#e2d6ee}
+.commerce-page .order-included .icon{width:18px;height:18px;color:#b995ea;flex-shrink:0}
+.commerce-page .order-delivery-note{display:flex;gap:12px;align-items:flex-start;padding-top:20px}
+.commerce-page .order-delivery-note .icon{color:#c0a1ee;flex-shrink:0;width:19px;height:19px;margin-top:1px}
+.commerce-page .order-delivery-note p{font-size:.74rem;line-height:1.75;color:#bfb0cd;margin:0}
+.commerce-page .delivery-preview-link{font-size:.75rem;color:#d0b8ed;min-height:44px;margin-top:12px;gap:10px}
+.commerce-page .delivery-preview-link .icon{width:16px;height:16px}
+.commerce-page .commerce-bottom-help{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #33273d;margin-top:34px;padding-top:18px;font-size:.8rem;color:#bdb0cd}
+.commerce-page .commerce-bottom-help .text-link{font-size:.8rem;color:#d9c5f4;min-height:44px}
+.commerce-page .delivery-heading{margin-bottom:28px}
+.commerce-page .preview-notice{margin:0 0 20px}
+.commerce-page .delivery-layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);gap:26px;align-items:start}
+.commerce-page .delivery-chat{overflow:hidden;background:#111015}
+.commerce-page .delivery-chat-header{display:flex;align-items:center;gap:12px;padding:24px;border-bottom:1px solid #32283b;background:#18111f}
+.commerce-page .delivery-assistant-icon{width:42px;height:42px;border:1px solid #634385;border-radius:12px;background:#2a173d;display:flex;align-items:center;justify-content:center;color:#d5b6ff;flex-shrink:0}
+.commerce-page .delivery-chat-header h2{font-size:1.05rem;letter-spacing:-.025em;margin:0 0 6px}
+.commerce-page .delivery-chat-header p{font-size:.7rem;color:#c0a8d7;margin:0}
+.commerce-page .assistant-label{margin-left:auto;font-size:.59rem;text-transform:uppercase;letter-spacing:.04em;color:#d0b9e7;background:#2a2034;border:1px solid #4e3d60;padding:5px 7px;border-radius:5px;white-space:nowrap}
+.commerce-page .delivery-chat-status{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 22px;border-bottom:1px solid #2d2535}
+.commerce-page .delivery-state{font-size:.7rem;color:#e6cd9d;display:flex;align-items:center;gap:7px;line-height:1.5}
+.commerce-page .delivery-state:before{content:'';width:6px;height:6px;flex-shrink:0;background:#d8ac63;border-radius:50%}
+.commerce-page .delivery-state[data-state=approved]{color:#b7ebce}
+.commerce-page .delivery-state[data-state=approved]:before{background:#7fcba2}
+.commerce-page .delivery-state[data-state=problem]{color:#f2b9c2}
+.commerce-page .delivery-state[data-state=problem]:before{background:#e996a3}
+.commerce-page .delivery-chat-status .text-link{font-size:.64rem;gap:6px;min-height:44px;color:#c9b7dd;white-space:nowrap}
+.commerce-page .delivery-chat-status .icon{width:15px;height:15px}
+.commerce-page .delivery-thread{display:grid;align-content:start;gap:22px;min-height:300px;padding:26px 22px;max-height:650px;overflow-y:auto;scrollbar-color:#665074 #151018;scrollbar-width:thin;overscroll-behavior:contain}
+.commerce-page .delivery-loading{font-size:.82rem;display:flex;gap:10px;color:#c1b1ce;align-self:center;justify-content:center;margin:50px 0}
+.commerce-page .delivery-loading .icon{width:19px;height:19px;flex-shrink:0}
+.commerce-page .delivery-thread>div{display:grid;gap:22px;min-width:0}
+.commerce-page .delivery-thread>div:empty{display:none}
+.commerce-page .chat-message{display:flex;align-items:flex-start;gap:10px;min-width:0}
+.commerce-page .chat-avatar{width:30px;height:30px;flex-shrink:0;border-radius:9px;background:#2e1944;border:1px solid #624086;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:700;color:#d4b9f2}
+.commerce-page .chat-avatar .icon{width:16px;height:16px}
+.commerce-page .chat-bubble{border:1px solid #3d304b;background:#1b1523;border-radius:0 14px 14px 14px;padding:16px;min-width:0;max-width:100%;font-size:.82rem;line-height:1.75;color:#d6cbe2;overflow-wrap:anywhere}
+.commerce-page .chat-bubble>p{margin:0 0 12px}
+.commerce-page .chat-bubble>p:last-child{margin-bottom:0}
+.commerce-page .chat-bubble>strong,.commerce-page .chat-bubble>h3{display:block;font-size:.84rem;color:#f2e9fd;margin:0 0 9px;letter-spacing:0}
+.commerce-page .chat-message.user{justify-content:flex-end}
+.commerce-page .chat-message.user .chat-avatar{display:none}
+.commerce-page .chat-message.user .chat-bubble{max-width:85%;border-radius:14px 0 14px 14px;border-color:#674092;background:#2a173e;color:#efe0ff}
+.commerce-page .chat-file{display:block;border:1px solid #5b3b75;border-radius:10px;background:#241632;padding:14px;margin-top:12px}
+.commerce-page .chat-file-name{display:block;font-size:.83rem;font-weight:600;color:#efdefd;overflow-wrap:anywhere;margin:0 0 5px}
+.commerce-page .chat-file-meta{display:block;font-size:.69rem;line-height:1.65;color:#bda8d0;margin:0 0 12px}
+.commerce-page .chat-file .button{min-height:44px;width:100%;font-size:.75rem;padding:11px 14px;gap:10px;border-radius:8px}
+.commerce-page .chat-tutorial{margin-top:14px;border-top:1px solid #493451;padding-top:6px}
+.commerce-page .chat-tutorial>h2{font-size:.88rem;letter-spacing:-.02em;line-height:1.4;margin:12px 0 10px;color:#f0e3fc}
+.commerce-page .chat-tutorial-step{display:block;margin:0;border:0;border-bottom:1px solid #45304f;padding:0;font-size:.78rem;line-height:1.7}
+.commerce-page .chat-tutorial-step:last-child{border-bottom:0}
+.commerce-page .chat-tutorial-step>summary{font-size:.78rem;font-weight:500;min-height:50px;color:#e3cafd;cursor:pointer;display:flex;align-items:center;justify-content:flex-start;gap:10px;list-style:none;padding:10px 0}
+.commerce-page .chat-tutorial-step>summary::-webkit-details-marker{display:none}
+.commerce-page .chat-tutorial-step>summary>span:nth-child(2){flex:1;min-width:0;line-height:1.55}
+.commerce-page .chat-tutorial-step>summary>.icon{width:18px;height:18px;flex-shrink:0;color:#c5a1ed}
+.commerce-page .chat-tutorial-step>p{margin:0;padding:0 0 14px 34px;font-size:.75rem;color:#c2adce;line-height:1.75}
+.commerce-page .chat-step-number{display:flex;align-items:center;justify-content:center;width:24px;height:24px;flex-shrink:0;background:#342045;border:1px solid #644178;border-radius:7px;font-size:.66rem;color:#d9baee}
+.commerce-page .delivery-feedback{margin:0;padding:0 22px 16px}
+.commerce-page .chat-form{display:flex;align-items:start;gap:10px;padding:18px 22px 12px;border-top:1px solid #34263d;background:#141019}
+.commerce-page .chat-form input{min-width:0;min-height:46px;font-size:.74rem;padding:12px;border-radius:9px}
+.commerce-page .chat-form .button{min-height:46px;font-size:.74rem;padding:12px 16px;gap:8px;border-radius:9px;flex-shrink:0}
+.commerce-page .chat-form .button .icon{width:16px;height:16px}
+.commerce-page .chat-disclosure{margin:0;padding:0 22px 18px;font-size:.64rem;color:#b9a6c9;line-height:1.7;background:#141019}
+.commerce-page .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.commerce-page .delivery-sidebar{display:grid;gap:28px;min-width:0}
+.commerce-page .delivery-order{padding:26px}
+.commerce-page .delivery-order>.eyebrow{font-size:.62rem;margin:0 0 14px}
+.commerce-page .delivery-order h2{font-size:1.4rem;margin:0 0 20px}
+.commerce-page .delivery-order dl{margin:0}
+.commerce-page .delivery-order dl>div{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:13px 0;border-top:1px solid #33293c;font-size:.75rem}
+.commerce-page .delivery-order dt{color:#b5a5c4}
+.commerce-page .delivery-order dd{margin:0;text-align:right;color:#e5d9f0;overflow-wrap:anywhere}
+.commerce-page .delivery-progress{font-size:.7rem;line-height:1.7;color:#c5acd8;border-top:1px solid #33293c;padding-top:15px;margin:0}
+.commerce-page .delivery-next{padding:0 10px}
+.commerce-page .delivery-next h2{font-size:1.15rem;margin:0 0 24px}
+.commerce-page .delivery-next ol{list-style:none;padding:0;margin:0;display:grid;gap:22px}
+.commerce-page .delivery-next li{display:flex;align-items:flex-start;gap:12px}
+.commerce-page .delivery-next li>span{font-family:'Space Grotesk',Inter,sans-serif;font-size:.8rem;line-height:1.4;color:#bb91e3;width:22px;flex-shrink:0}
+.commerce-page .delivery-next strong{display:block;font-size:.77rem;line-height:1.4;font-weight:500;color:#e2d4ed;margin-bottom:6px}
+.commerce-page .delivery-next p{font-size:.72rem;line-height:1.7;color:#ad9abc;margin:0}
+.commerce-page .delivery-next .text-link{margin-top:15px;font-size:.77rem;color:#d7beee;min-height:44px;gap:10px}
+@media(max-width:960px){.commerce-page .payment-layout{gap:20px;grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr)}.commerce-page .payment-form-panel{padding:26px}.commerce-page .payment-summary{padding:25px 22px 16px}.commerce-page .payment-method{flex-direction:column;align-items:flex-start;gap:8px;padding:12px}.commerce-page .delivery-layout{gap:20px;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}.commerce-page .assistant-label{display:none}.commerce-page .delivery-order{padding:22px}.commerce-page .chat-form{flex-wrap:wrap}.commerce-page .chat-form input{flex:1}.commerce-page .chat-form .button{flex:none}}
+@media(max-width:760px){.commerce-page .commerce-main{padding-top:20px;padding-bottom:45px}.commerce-page .commerce-back{margin-bottom:18px;font-size:.76rem}.commerce-page .commerce-steps{gap:25px;font-size:.7rem;margin-bottom:26px}.commerce-page .commerce-steps li{gap:7px}.commerce-page .commerce-steps li>span{width:23px;height:23px;font-size:.59rem}.commerce-page .commerce-steps li+li:before{left:-20px;width:13px}.commerce-page .commerce-heading{margin-bottom:28px}.commerce-page .commerce-heading h1{font-size:clamp(2.45rem,9vw,3.4rem);margin-bottom:16px}.commerce-page .commerce-heading>.eyebrow{font-size:.62rem}.commerce-page .commerce-heading>p:last-child{font-size:.84rem;max-width:400px}.commerce-page .payment-layout{display:flex;flex-direction:column;gap:20px}.commerce-page .commerce-panel{border-radius:18px;width:100%}.commerce-page .payment-summary{position:static;order:-1;padding:23px}.commerce-page .order-summary-top{margin-bottom:16px}.commerce-page .payment-summary h2{font-size:1.5rem}.commerce-page .order-description{max-width:100%;font-size:.78rem;margin-bottom:18px}.commerce-page .order-price{font-size:2.55rem}.commerce-page .order-included{gap:11px;padding:16px 0}.commerce-page .order-delivery-note{padding-top:16px}.commerce-page .delivery-preview-link{margin-top:7px}.commerce-page .payment-form-panel{padding:24px 22px}.commerce-page .commerce-panel-heading{gap:10px;margin-bottom:22px}.commerce-page .commerce-panel-heading h2{font-size:1.3rem}.commerce-page .commerce-panel-heading p{font-size:.76rem}.commerce-page .commerce-field label{font-size:.78rem}.commerce-page .commerce-field input{min-height:52px;font-size:.84rem}.commerce-page .payment-method{gap:8px;padding:12px 10px;min-height:96px}.commerce-page .payment-method-grid{gap:7px}.commerce-page .payment-method strong{font-size:.75rem}.commerce-page .payment-method small{font-size:.59rem}.commerce-page .payment-provider-note{font-size:.63rem}.commerce-page .commerce-bottom-help{align-items:flex-start;flex-direction:column;gap:3px;padding-top:17px;font-size:.75rem;margin-top:26px}.commerce-page .commerce-bottom-help .text-link{font-size:.75rem}.commerce-page .delivery-layout{grid-template-columns:1fr;gap:28px}.commerce-page .delivery-chat-header{padding:20px 18px;gap:10px}.commerce-page .delivery-chat-header h2{font-size:.95rem}.commerce-page .delivery-chat-header p{font-size:.69rem}.commerce-page .delivery-chat-status{padding:5px 16px;gap:8px}.commerce-page .delivery-state{font-size:.63rem;gap:5px}.commerce-page .delivery-chat-status .text-link{font-size:.6rem;gap:5px}.commerce-page .delivery-chat-status .icon{width:13px;height:13px}.commerce-page .delivery-thread{padding:22px 16px;min-height:260px;max-height:610px;gap:18px}.commerce-page .chat-message{gap:8px}.commerce-page .chat-avatar{width:26px;height:26px;border-radius:8px;font-size:.52rem}.commerce-page .chat-bubble{padding:13px;font-size:.77rem}.commerce-page .chat-file{padding:12px}.commerce-page .chat-file-name{font-size:.77rem}.commerce-page .chat-file-meta{font-size:.66rem}.commerce-page .chat-form{padding:16px 16px 10px;gap:8px}.commerce-page .chat-form input{width:100%;flex-basis:100%;font-size:.75rem}.commerce-page .chat-form .button{margin-left:auto;font-size:.74rem;min-width:110px}.commerce-page .chat-disclosure{padding:0 16px 16px;font-size:.61rem}.commerce-page .delivery-order{padding:23px}.commerce-page .delivery-sidebar{gap:27px}.commerce-page .delivery-next{padding:0 3px}.commerce-page .preview-notice{font-size:.7rem}.commerce-page .delivery-feedback{padding:0 16px 14px}.commerce-page .delivery-loading{font-size:.75rem}}
+.commerce-page .pix-checkout{margin-top:24px;padding-top:22px;border-top:1px solid #443151;text-align:left}
+.commerce-page .pix-checkout h3{margin:0 0 9px;font-size:1.12rem}
+.commerce-page .pix-checkout>p{font-size:.8rem;line-height:1.65;color:#c8b6d9}
+.commerce-page #pix-qr{display:block;width:236px;max-width:100%;height:auto;margin:20px auto;padding:10px;background:#fff;border-radius:12px;box-sizing:border-box}
+.commerce-page #pix-qr[hidden]{display:none}
+.commerce-page .pix-checkout .commerce-field{margin-top:20px}
+.commerce-page #pix-code{font-family:monospace;font-size:.8rem}
+.commerce-page #pix-copy{width:100%;min-height:48px}
+.commerce-page .pix-expiry{margin:12px 0 0;font-size:.7rem}
+@media(prefers-reduced-motion:reduce){.commerce-page .chat-message{animation:none}.commerce-page *{scroll-behavior:auto}}
